@@ -1,0 +1,121 @@
+* {
+  color: rgb(61, 61, 61);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  background-image: url("https://i.pinimg.com/originals/d3/6d/46/d36d462db827833805497d9ea78a1343.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+/* LOGO */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#logo {
+  height: 200px;
+}
+
+/* SEARCH */
+.search-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+.search-form {
+  border: 2px solid rgb(235, 58, 58);
+  height: 60px;
+  width: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.search-input {
+  height: 100%;
+  width: 80%;
+  border: none;
+  font-size: 30px;
+  outline: none;
+}
+.submit-button {
+  width: 20%;
+  height: 100%;
+  border: none;
+  background-color: rgb(235, 58, 58);
+  color: white;
+  font-size: 24px;
+}
+
+/* CARDS */
+.main-wrapper {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.main-container {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  height: fit-content;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.card {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  width: 280px;
+  height: 400px;
+  padding: 10px;
+  flex-direction: column;
+  box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.36);
+}
+.card-img {
+  height: 200px;
+  width: 260px;
+  background-position: center;
+  background-size: cover;
+}
+.card-name {
+  font-size: 24px;
+}
+.card-name-btn-container {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.btn-container {
+  display: flex;
+  align-items: center;
+}
+.ingredients-btn {
+  padding: 5px 15px;
+  border: none;
+  background-color: rgb(255, 222, 35);
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.4s ease;
+  font-weight: bold;
+}
+.ingredients-btn:hover {
+  transform: scale(1.1);
+}
+.card-info {
+  width: 100%;
+}
