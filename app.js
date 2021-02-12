@@ -1,4 +1,9 @@
 // Seach Logic
+const nextBtn = document.querySelector('.next-page');
+const prevBtn = document.querySelector('.prev-page');
+
+const pagination = document.querySelector('.pagination');
+pagination.style.display = 'none';
 function search(){
       const form = document.querySelector('.search-form');
       const searchInput = document.querySelector('.search-input');
@@ -7,9 +12,13 @@ function search(){
             e.preventDefault();
             clear();
 
+            pagination.style.display = 'flex';
+
             let searchValue = searchInput.value;
 
             searchRecipes(searchValue, from, to);
+
+            
 
             
       })   
@@ -88,8 +97,7 @@ function searchRecipes (search, fromPage, toPage){
 
       const searchInput = document.querySelector('.search-input');
 
-      const nextBtn = document.querySelector('.next-page');
-      const prevBtn = document.querySelector('.prev-page');
+      
 
       nextBtn.addEventListener('click', (e) => {
             e.preventDefault();

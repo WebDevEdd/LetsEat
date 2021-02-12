@@ -6,10 +6,15 @@
   font-family: "Roboto", sans-serif;
 }
 body {
-  background-image: url("https://i.pinimg.com/originals/d3/6d/46/d36d462db827833805497d9ea78a1343.jpg");
+  background-image: url("images/food-1932466_1920.jpg");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
 }
 /* LOGO */
 .logo-container {
@@ -18,6 +23,7 @@ body {
   align-items: center;
 }
 #logo {
+  margin-top: 30px;
   height: 200px;
 }
 
