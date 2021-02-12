@@ -119,3 +119,19 @@ body {
 .card-info {
   width: 100%;
 }
+.pagination {
+  width: 90%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.page {
+  padding: 5px 15px;
+  background-color: rgb(235, 58, 58);
+  border: none;
+  outline: none;
+  margin: 30px;
+  font-size: 32px;
+  color: white;
+}

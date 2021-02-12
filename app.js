@@ -2,20 +2,25 @@
 function search(){
       const form = document.querySelector('.search-form');
       const searchInput = document.querySelector('.search-input');
-      
+
       form.addEventListener('submit', (e) => {
             e.preventDefault();
+            clear();
 
             let searchValue = searchInput.value;
 
-            searchRecipes(searchValue);
+            searchRecipes(searchValue, from, to);
 
-            clear(searchInput);
+            
       })   
 }
+let from = 0;
+let to = 14;
 search();
-function clear(search){
-      search.value = '';
+
+function clear(){
+      const container = document.querySelector('.main-container');
+      container.innerHTML= '';
 }
 
 function creatCards(image, name, link, calories, health){
@@ -54,18 +59,18 @@ function creatCards(image, name, link, calories, health){
       container.innerHTML += card;
 }
 
-function searchRecipes (search){
+function searchRecipes (search, fromPage, toPage){
       let APP_ID = 'eeab0073';
       let API_KEY = 'ea82b59d97cc29c1cb4715cafd4913c0';
 
 
-      fetch(`https://api.edamam.com/search?app_id=${APP_ID}&app_key=${API_KEY}&q=${search}&to=30`, {
+      fetch(`https://api.edamam.com/search?app_id=${APP_ID}&app_key=${API_KEY}&q=${search}&from=${fromPage}&to=${toPage}`, {
 	"method": "GET"
       })
       .then(response => response.json()).then(data => {
             let items = data.hits;
 
-            console.log(data.to);
+            console.log(data);
             items.forEach(e => {
                   let image = e.recipe.image;
                   let name = e.recipe.label;
@@ -80,5 +85,30 @@ function searchRecipes (search){
 	console.error(err);
       });
 };
+
+      const searchInput = document.querySelector('.search-input');
+
+      const nextBtn = document.querySelector('.next-page');
+      const prevBtn = document.querySelector('.prev-page');
+
+      nextBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            from += 15;
+            to += 15;
+            
+            clear();
+            searchRecipes(searchInput.value, from, to);
+      })
+
+      prevBtn.addEventListener('click', (e) => {
+            if (from >= 15){
+                  e.preventDefault();
+                  from -= 15;
+                  to -= 15;
+                  clear();
+                  searchRecipes(searchInput.value, from, to);
+            }
+      })
+
 
 
